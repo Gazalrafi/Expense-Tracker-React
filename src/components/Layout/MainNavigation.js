@@ -1,6 +1,6 @@
 import React from 'react';
 import {useContext} from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import AuthContext from '../../store/auth-context';
 import classes from './MainNavigation.module.css';
 
@@ -16,39 +16,47 @@ const logoutHandler=()=>{
   
     <header className={classes.header}>
      <img className={classes.image} src="https://images.template.net/wp-content/uploads/2014/10/Black-Triangle-Shape.jpg" alt=""/>
-      <Link to='/'>
+      <NavLink to='/'>
         <div className={classes.logo}>MyWebLink</div>
-      </Link>
+      </NavLink>
 
-      <nav>
+      <nav className={classes.nav}>
         <ul> 
         {(isLoggedIn && 
           <li>
-          <Link to='/home'>Home</Link>
+          <NavLink to='/home'>Home</NavLink>
         </li>
         )}
         {(isLoggedIn && 
         <li>
-          <Link to='/products'>Products</Link>
+          <NavLink to='/products'>Products</NavLink>
         </li>
         )}
 
         {(isLoggedIn && 
         <li>
-          <Link to='/about'>About Us</Link>
+          <NavLink to='/about'>About Us</NavLink>
        </li>
        )}
         
           {isLoggedIn && (
           <li>
-            <Link to='/profile'>Profile</Link>
+            <NavLink to='/changepassword'>Change password</NavLink>
           </li>
            )}
            {isLoggedIn && (
-          <li>
+          <li >
             <button onClick={logoutHandler}>Logout</button>
           </li>
            )}
+          
+           <li><p className={classes.paragraph}>Incomplete profile.</p></li><span/>
+           {isLoggedIn && (
+          <li>
+            <NavLink to='/complete' className={classes.complete}>Complete now</NavLink> 
+          </li>
+           )}
+          
         </ul>
       </nav>
     </header>

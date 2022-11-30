@@ -1,0 +1,41 @@
+.form{
+  
+   margin:5rem auto;
+   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+   max-width: 40rem;
+   height: 9rem;;
+}
+
+.cancelButton{
+  position:relative;
+  right:-485px;
+  top:-43px;
+  color:red;
+  border-color:red;
+  width: 120px;
+  border-radius:5px;
+    
+}
+.updateButton{
+  position:relative;
+  top:15px;
+  width: 120px;
+  border-radius:20px ;
+  background-color: rgb(85, 163, 163);
+}
+.header{
+  background-color: burlywood;
+  font-style: italic;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  max-width: 22rem;
+  height: 3rem;
+  border-radius: 5px;
+  position:relative;
+  right:-1000px;
+}
+.paragraphB{
+  position:relative;
+  left:210px;
+  top:-34px;
+  color:blue;
+}

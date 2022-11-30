@@ -4,7 +4,7 @@ import classes from './StartingPageContent.module.css';
 const StartingPageContent = () => {  //
   return (
     <section className={classes.starting}>
-      <h1>This is Our Site</h1>
+      <h1>Welcome to Expense Tracker</h1>
     </section>
   );
 };   //

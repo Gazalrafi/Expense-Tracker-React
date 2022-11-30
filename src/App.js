@@ -5,6 +5,7 @@ import UserProfile from './components/Profile/UserProfile';
 import AuthPage from './pages/AuthPage';
 import HomePage from './pages/HomePage';
 import AuthContext from './store/auth-context';
+import ProfilePage from './pages/ProfilePage.js';
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -12,8 +13,11 @@ function App() {
   return (
     <Layout>
       <Switch>
-        <Route path='/profile'>
+        <Route path='/changepassword'>
           {authCtx.isLoggedIn && <UserProfile />}
+        </Route>
+        <Route path='/complete'>
+          {authCtx.isLoggedIn && <ProfilePage />}
         </Route>
         <Route path='*'>
           <Redirect to='/' />
