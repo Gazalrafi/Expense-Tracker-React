@@ -49,8 +49,7 @@ const logoutHandler=()=>{
             <button onClick={logoutHandler}>Logout</button>
           </li>
            )}
-          
-           <li><p className={classes.paragraph}>Incomplete profile.</p></li><span/>
+          <li>{isLoggedIn &&<p className={classes.paragraph}>Incomplete profile.</p>}</li><span/>
            {isLoggedIn && (
           <li>
             <NavLink to='/complete' className={classes.complete}>Complete now</NavLink> 

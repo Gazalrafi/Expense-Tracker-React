@@ -1,11 +1,12 @@
 import { useContext } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route,  } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import UserProfile from './components/Profile/UserProfile';
 import AuthPage from './pages/AuthPage';
 import HomePage from './pages/HomePage';
 import AuthContext from './store/auth-context';
 import ProfilePage from './pages/ProfilePage.js';
+import ForgetPasswordPage from './pages/ForgetPasswordPage';
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -19,12 +20,13 @@ function App() {
         <Route path='/complete'>
           {authCtx.isLoggedIn && <ProfilePage />}
         </Route>
-        <Route path='*'>
-          <Redirect to='/' />
+        <Route path='/forget'>
+          <ForgetPasswordPage/>
         </Route>
+        
       </Switch>
       {!authCtx.isLoggedIn && (
-            <AuthPage/>
+            <AuthPage/>     
         )}
 
       {authCtx.isLoggedIn && (
