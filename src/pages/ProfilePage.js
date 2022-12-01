@@ -12,8 +12,8 @@ const ProfilePage=()=>{
             name:nameRef.current.value,
             link:profilePhotoRef.current.value
         };
+        
         addHandler(userDetails);
-        console.log(userDetails)
         async function addHandler() {
             const response = await fetch('https://expense-tracker-b6997-default-rtdb.firebaseio.com/profile.json', {
               method: 'POST',
@@ -22,9 +22,25 @@ const ProfilePage=()=>{
                 'Content-Type': 'application/json'
               }
             });
+            if(response.ok){
             const data = await response.json();
             console.log(data);
           } 
+        }
+          try{
+          inputDataHandler(userDetails);
+          async function inputDataHandler(){
+            const response= await fetch('https://expense-tracker-b6997-default-rtdb.firebaseio.com/profile.json');
+            if(response.ok){
+                const data=await response.json();
+                console.log(data);
+          }
+        }
+    }
+          catch(error){
+            console.log('something went wrong');
+          }
+
         }
        
 return (
@@ -48,7 +64,7 @@ return (
         <label htmlFor="url"> Profile photo URL</label><span/>
         <input type='url' id='url' ref={profilePhotoRef}/>
         <div >
-        <button className={classes.updateButton} >update</button>
+        <button className={classes.updateButton}>update</button>
         </div>   
     </form>
     </div>
