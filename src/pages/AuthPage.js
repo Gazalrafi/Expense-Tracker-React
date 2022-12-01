@@ -3,8 +3,7 @@ import AuthForm from '../components/Auth/AuthForm';
 import classes from './AuthPage.module.css';
 
 const AuthPage = () => {   
-  return( <div className={classes.sideimage}>
-     
+  return( <div className={classes.sideimage}>   
   <AuthForm />
   </div>);
 };

@@ -1,8 +1,9 @@
 .button{
     position:relative;
-    left:600px;
+    top:-1150px;
+    left:535px;
     width: 200px;
     height: 50px;
     border-radius: 10px;
-    background-color: rgba(165, 42, 42, 0.384);
+    background-color: burlywood;
 }

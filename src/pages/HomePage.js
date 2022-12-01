@@ -1,9 +1,20 @@
 import StartingPageContent from '../components/StartingPage/StartingPageContent';
 import classes from './HomePage.module.css';
-import React,{useContext} from 'react';
+import React,{useState,useContext} from 'react';
 import AuthContext from '../store/auth-context.js';
+import ExpensesMain from'../newcomponents/Expenses/ExpensesMain.js';
+import NewExpense from "../newcomponents/NewExpenses/NewExpense.js";
+
+let Dummy_Expense=[];
 
 const HomePage = () => {
+
+  const [expenses,setExpenses]=useState(Dummy_Expense);
+   
+    const addExpenseHandler=(expense)=>{
+        const updatedExpense=[expense,...expenses];// expense is the data which came from ExpensesMain
+        setExpenses(updatedExpense);
+    };
 
 const authCtx=useContext(AuthContext);
 
@@ -29,8 +40,16 @@ const verifyHandler=()=>{
 
 }
  
-return <div><StartingPageContent />;
+return <div>
+   <div>
+            
+            <NewExpense  onAddExpense={addExpenseHandler}/>
+            <ExpensesMain item={expenses}/>
+    </div>
+  <StartingPageContent />;
 <button className={classes.button} onClick={verifyHandler}>Verify Email Address </button>
+
+         
 </div>
 };
 export default HomePage;

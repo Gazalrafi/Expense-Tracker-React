@@ -1,0 +1,19 @@
+ h2{
+    box-sizing: border-box;
+    border-radius:0ch;
+    background-color: white;
+    font-size:larger;
+    
+}
+.expenses-select{
+    display:flex;
+    background-color:rgb(62, 100, 116) ;
+    color:white;
+    border:rgb(60, 98, 119);
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    
+}
+

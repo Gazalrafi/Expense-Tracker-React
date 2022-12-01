@@ -1,0 +1,11 @@
+.expense-item__price{
+    display:flex;
+    flex-direction: column;
+    width: 6rem;
+    height: 2rem;
+    border: 1px solid #ececec;
+    background-color:rgb(100, 45, 79);
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
