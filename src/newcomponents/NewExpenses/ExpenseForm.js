@@ -38,8 +38,34 @@ const ExpenseForm=(props)=>{                   //
     }
     props.onSaveExpenseData(expenseData);
 
-    console.log(expenseData)
+    expenseDataHandler(expenseData);
+        async function expenseDataHandler() {
+            const response = await fetch('https://expense-tracker-b6997-default-rtdb.firebaseio.com/ExpenseData.json', {
+              method: 'POST',
+              body: JSON.stringify(expenseData),
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            });
+            if(response.ok){
+            const data = await response.json();
+            console.log(data);
+          } 
 
+          try{
+            getDataHandler();
+            async function getDataHandler(){
+              const response= await fetch('https://expense-tracker-b6997-default-rtdb.firebaseio.com/ExpenseData.json');
+              if(response.ok){
+                  const data=await response.json();
+                  console.log(data);
+            }
+          }
+      }
+            catch(error){
+              console.log('something went wrong');
+            }
+        }
     setEnteredTitle('');
     setEnteredAmount('');
     setEnteredDate('');

@@ -1,4 +1,4 @@
-import StartingPageContent from '../components/StartingPage/StartingPageContent';
+
 import classes from './HomePage.module.css';
 import React,{useState,useContext} from 'react';
 import AuthContext from '../store/auth-context.js';
@@ -46,7 +46,6 @@ return <div>
             <NewExpense  onAddExpense={addExpenseHandler}/>
             <ExpensesMain item={expenses}/>
     </div>
-  <StartingPageContent />;
 <button className={classes.button} onClick={verifyHandler}>Verify Email Address </button>
 
          

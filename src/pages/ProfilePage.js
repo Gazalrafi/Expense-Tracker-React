@@ -28,7 +28,7 @@ const ProfilePage=()=>{
           } 
         }
           try{
-          inputDataHandler(userDetails);
+          inputDataHandler();
           async function inputDataHandler(){
             const response= await fetch('https://expense-tracker-b6997-default-rtdb.firebaseio.com/profile.json');
             if(response.ok){
